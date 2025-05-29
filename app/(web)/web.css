@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+
+.grid-items {
+  @apply rounded-md h-40 border-gray-400 border-2 bg-slate-100 flex justify-center items-center;
+}
