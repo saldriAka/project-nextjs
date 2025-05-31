@@ -1,12 +1,16 @@
+
 import "./../globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { items, links } from "@/lib/static-data";
 import TopMenu from "@/components/layouts/TopMenu";
+import { NavigationProgress } from "@/components/NavigationProgress";
+import { AppSidebar } from "@/components/layouts/AppSidebar";
+import { AuthProvider } from "@/components/AuthProvider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +35,8 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body>
+        <NavigationProgress/>
+        <Toaster richColors />
         <SidebarProvider>
           <AppSidebar menuItems={items}/>
           <div
@@ -53,7 +59,10 @@ export default function DashboardLayout({
               <Separator orientation='vertical' className='h-6' />
               <TopMenu menuItems={links} />
             </header>
-            {children}
+              <AuthProvider>
+                {children}
+              </AuthProvider>
+               
           </div>
         </SidebarProvider>
       </body>

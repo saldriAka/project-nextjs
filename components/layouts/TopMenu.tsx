@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { signOut } from 'next-auth/react';
 function TopMenu({ menuItems }: { menuItems: TopMenuItems[] }) {
   return (
     <>
@@ -118,7 +119,7 @@ function TopMenu({ menuItems }: { menuItems: TopMenuItems[] }) {
             <DropdownMenuItem>New Team</DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => signOut({ callbackUrl: '/' })}>
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
