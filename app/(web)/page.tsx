@@ -1,6 +1,11 @@
+'use client'
 
+import { useSession, signOut, signIn } from 'next-auth/react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function HomePage() {
+  const { data: session } = useSession()
   return (
     <>
       <div className="bg-purple-950 md:bg-red-600 lg:bg-green-900 border-violet-500 border-b-2">
@@ -9,11 +14,22 @@ export default function HomePage() {
             Hello world
           </h1>
           <ul className="flex text-white space-x-10 justify-center mt-5 sm:mt-0">
-            <li>Home</li>
-            <li>About</li>
-            <li>News</li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/news">News</Link></li>
             <li>Portfolio</li>
             <li>Career</li>
+            <li>
+              {session ? (
+                <Button onClick={() => signOut({ callbackUrl: '/' })}>Logout</Button>
+              ) : (
+                <>
+                  <Button asChild variant="outline">
+                    <Link href="/login" className='text-black'>Login</Link>
+                  </Button>
+                </>
+              )}
+            </li>
           </ul>
         </div>
         

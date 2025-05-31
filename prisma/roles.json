@@ -1,0 +1,10 @@
+[
+  {
+    "role_name": "admin",
+    "role_desc": "Administrator with full access"
+  },
+  {
+    "role_name": "user",
+    "role_desc": "Regular user with limited access"
+  }
+]

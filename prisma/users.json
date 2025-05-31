@@ -1,12 +1,16 @@
 [
-  { "id": "1", "name": "Alice Johnson", "email": "alice@example.com" },
-  { "id": "2", "name": "Bob Smith", "email": "bob@example.com" },
-  { "id": "3", "name": "Charlie Brown", "email": "charlie@example.com" },
-  { "id": "4", "name": "Diana Prince", "email": "diana@example.com" },
-  { "id": "5", "name": "Ethan Hunt", "email": "ethan@example.com" },
-  { "id": "6", "name": "Fiona Gallagher", "email": "fiona@example.com" },
-  { "id": "7", "name": "George Martin", "email": "george@example.com" },
-  { "id": "8", "name": "Hannah Lee", "email": "hannah@example.com" },
-  { "id": "9", "name": "Ian McKellen", "email": "ian@example.com" },
-  { "id": "10", "name": "Julia Roberts", "email": "julia@example.com" }
+  {
+    "id": 1,
+    "email": "admin@admin.com",
+    "password": "$2a$12$Rvslxj25D4OU7w3Ercz/IucMiDkEp1dOCSwq902oWpy0mqcUx2GAq",
+    "avatar": "https://example.com/avatar1.png",
+    "role_name": "admin"
+  },
+  {
+    "id": 2,
+    "email": "user@example.com",
+    "password": "$2a$12$Rvslxj25D4OU7w3Ercz/IucMiDkEp1dOCSwq902oWpy0mqcUx2GAq",
+    "avatar": "https://example.com/avatar2.png",
+    "role_name": "user"
+  }
 ]

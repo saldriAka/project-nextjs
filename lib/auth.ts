@@ -1,25 +1,60 @@
-// import { NextAuthOptions } from 'next-auth';
-// import CredentialsProvider from 'next-auth/providers/credentials';
+import type { AuthOptions, SessionStrategy } from "next-auth"
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { compare } from 'bcryptjs'
+import prisma from './db'
 
-// const authOptions: NextAuthOptions = {
-//   providers: [
-//     CredentialsProvider({
-//       name: 'Credentials',
-//       credentials: {
-//         email: { label: 'Email', type: 'text' },
-//         password: { label: 'Password', type: 'password' },
-//       },
-//       async authorize(credentials) {
-//         if (credentials?.email === 'admin@example.com') {
-//           return { id: '1', name: 'Admin' };
-//         }
-//         return null;
-//       },
-//     }),
-//   ],
-//   pages: {
-//     signIn: '/login',
-//   },
-// };
+export const authOptions: AuthOptions = {
+  session: {
+    strategy: 'jwt' as SessionStrategy,
+  },
+  providers: [
+    CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        email: { label: 'Email', type: 'text' },
+        password: { label: 'Password', type: 'password' },
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) return null
 
-// export default authOptions;
+        const user = await prisma.users.findUnique({
+          where: { email: credentials.email },
+          include: { role: true },
+        })
+
+        if (!user) return null
+
+        const isValid = await compare(credentials.password, user.password)
+        if (!isValid) return null
+
+        return {
+          id: String(user.id),
+          email: user.email,
+          role: user.role.role_name,
+        }
+      },
+    }),
+  ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role
+        token.id = user.id
+      }
+      return token
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.role = token.role
+        session.user.id = token.id as string
+      }
+      return session
+    },
+  },
+    pages: {
+    signIn: '/login',
+  },
+}
+
+export default NextAuth(authOptions)
