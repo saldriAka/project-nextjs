@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ Modular Admin Panel - FakeStore API
 
-## Getting Started
+Admin panel modular yang dibangun menggunakan **Next.js App Router**, **Tailwind CSS**, dan **FakeStoreAPI**. Proyek ini menerapkan prinsip **Clean Architecture** untuk menjaga struktur kode tetap rapi, scalable, dan maintainable.
 
-First, run the development server:
+## ✨ Fitur Utama
+
+- 🔐 **Login Page**
+
+  - Login menggunakan email/password hardcoded
+  - Simpan token/flag auth di Zustand atau Context API
+
+- 📊 **Dashboard Produk**
+
+  - Menampilkan statistik dan daftar produk dari FakeStoreAPI
+  - Dilengkapi dengan pagination
+
+- 🛍️ **Manajemen Produk (CRUD)**
+
+  - Create, Read, Update, Delete produk
+  - Validasi dengan react-hook-form + zod
+
+- 👥 **Role-based Access Control**
+
+  - Halaman terbatas hanya untuk user admin
+
+- 🔎 **Search & Pagination**
+
+  - Fitur pencarian dan navigasi halaman produk
+
+- 💅 **UI Modern**
+
+  - Dibuat dengan Tailwind CSS dan Headless UI
+  - Responsive dan clean design
+
+- 🛑 **Error Handling**
+  - Penanganan error baik di client maupun server
+
+## 🧱 Struktur Proyek (Clean Architecture)
+
+```
+src/
+├── app/                   # Struktur App Router dari Next.js
+├── features/             # Modul fitur (product, auth)
+│   └── product/
+│       ├── components/   # Komponen UI terkait produk
+│       ├── pages/        # Halaman produk
+│       ├── services/     # Logika API call
+│       └── hooks/        # Custom hooks
+├── entities/             # Model domain & tipe data
+├── infrastructure/       # Antarmuka ke API eksternal (FakeStore)
+├── shared/               # Komponen bersama, utils, konfigurasi
+└── store/                # Global state (Zustand / Context API)
+```
+
+## 🚀 Cara Menjalankan
+
+1. **Clone repositori**
+
+```bash
+git clone https://github.com/username/modular-admin-panel.git
+cd modular-admin-panel
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+# atau
+yarn install
+```
+
+3. **Jalankan aplikasi**
 
 ```bash
 npm run dev
-# or
+# atau
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Akses di browser**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Login Credentials (Hardcoded)
 
-## Learn More
+```txt
+Email: admin@example.com
+Password: admin123
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 API Publik
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Proyek ini menggunakan [FakeStoreAPI](https://fakestoreapi.com) sebagai data source utama untuk produk.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Dependencies Utama
 
-## Deploy on Vercel
+- Next.js 14+ (App Router)
+- Tailwind CSS
+- Headless UI
+- React Hook Form + Zod
+- Zustand / Context API
+- Lucide Icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ❤️ Kontribusi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pull request dan issue sangat diterima untuk pengembangan proyek lebih lanjut.
+
+---
+
+© 2025 - Dibuat dengan semangat Clean Code ✨

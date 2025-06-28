@@ -1,0 +1,188 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Users, Target, Award, Heart } from "lucide-react"
+
+export default function About() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
+            Tentang Kami
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Kami hadir untuk memberikan solusi nyata atas tantangan digital Anda. Dari ide kecil hingga sistem kompleks, kami bantu wujudkan dengan teknologi terbaik.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transform hover:scale-105"
+          >
+            <Link href="/contact">Hubungi Kami</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16 px-4 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 ">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+            Nilai-Nilai Utama Kami
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: <Users className="h-8 w-8" />,
+                title: "Kolaborasi",
+                description: "Kami percaya bahwa solusi terbaik lahir dari kerja sama yang erat dan terbuka.",
+              },
+              {
+                icon: <Target className="h-8 w-8" />,
+                title: "Inovasi",
+                description: "Kami terus menjelajahi teknologi baru untuk menciptakan solusi yang relevan dan efisien.",
+              },
+              {
+                icon: <Award className="h-8 w-8" />,
+                title: "Keunggulan",
+                description: "Kami berkomitmen memberikan hasil terbaik, tanpa kompromi terhadap kualitas.",
+              },
+              {
+                icon: <Heart className="h-8 w-8" />,
+                title: "Passion",
+                description: "Kami mencintai apa yang kami lakukan, dan itu terlihat dalam setiap solusi yang kami berikan.",
+              },
+            ].map((value, index) => (
+              <Card
+                key={index}
+                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+              >
+                <CardHeader>
+                  <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 w-fit transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white">
+                    {value.icon}
+                  </div>
+                  <CardTitle className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+                    {value.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+                Cerita Kami
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                Berdiri sejak 2020, kami memulai sebagai tim kecil dengan visi besar: menciptakan solusi digital yang bermakna.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Kini kami telah tumbuh menjadi mitra terpercaya berbagai bisnis, tanpa pernah melupakan misi utama kami: membantu klien kami tumbuh melalui teknologi.
+              </p>
+              <p className="text-muted-foreground">
+                Dengan semangat inovasi, kami terus berusaha menjadi bagian dari solusi di setiap tantangan digital yang Anda hadapi.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg p-1">
+                <div className="w-full h-full bg-background rounded-lg flex items-center justify-center">
+                  <img
+                    src="/placeholder.svg?height=400&width=400"
+                    alt="Tim Kami"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 px-4 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 ">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+            Tim Kami
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "John Doe",
+                role: "CEO & Founder",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Jane Smith",
+                role: "CTO",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Mike Johnson",
+                role: "Lead Designer",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+            ].map((member, index) => (
+              <Card
+                key={index}
+                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+              >
+                <CardHeader>
+                  <div className="mx-auto mb-4 w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 p-1">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover rounded-full bg-background"
+                    />
+                  </div>
+                  <CardTitle className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+                    {member.name}
+                  </CardTitle>
+                  <p className="text-muted-foreground">{member.role}</p>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
+            Siap Berkolaborasi?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Ayo diskusikan bagaimana kami bisa bantu mengubah ide Anda menjadi produk digital yang berdampak.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transform hover:scale-105"
+            >
+              <Link href="/contact">Mulai Proyek</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transform hover:scale-105 bg-transparent"
+            >
+              <Link href="/portfolio">Lihat Portofolio</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

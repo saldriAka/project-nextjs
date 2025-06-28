@@ -19,10 +19,6 @@ interface DataTableToolbarProps {
 export function DataTableToolbar({
   search,
   onSearchChange,
-  statusFilter,
-  onStatusFilterChange,
-  roleFilter,
-  onRoleFilterChange,
   onResetFilters,
   isFiltered,
 }: DataTableToolbarProps) {
@@ -35,38 +31,6 @@ export function DataTableToolbar({
           onChange={(e) => onSearchChange(e.target.value)}
           className="h-8 w-[150px] lg:w-[250px]"
         />
-
-        <div className="flex gap-x-2">
-          {/* Status Filter */}
-          <Select
-            value={statusFilter ?? 'all'}
-            onValueChange={(val) => onStatusFilterChange(val === 'all' ? null : val)}
-          >
-            <SelectTrigger className="h-8 w-[120px]">
-              <SelectValue placeholder="Status" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="active">Active</SelectItem>
-              <SelectItem value="inactive">Inactive</SelectItem>
-            </SelectContent>
-          </Select>
-
-          {/* Role Filter */}
-          <Select
-            value={roleFilter ?? 'all'}
-            onValueChange={(val) => onRoleFilterChange(val === 'all' ? null : val)}
-          >
-            <SelectTrigger className="h-8 w-[120px]">
-              <SelectValue placeholder="Role" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="admin">Admin</SelectItem>
-              <SelectItem value="user">User</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
 
         {isFiltered && (
           <Button variant="ghost" onClick={onResetFilters} className="h-8 px-2 lg:px-3">

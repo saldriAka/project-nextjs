@@ -111,8 +111,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         </h1>
         <p className="text-muted-foreground text-sm">
           {isRegister
-            ? 'Enter your email and password to create a new account.'
-            : 'Enter your email and password to login.'}
+            ? 'Masukan email dan password untuk Membuta Akun Baru.'
+            : 'Masukan email dan password untuk Login.'}
         </p>
       </div>
 
@@ -149,7 +149,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                     href="/forgot-password"
                     className="text-muted-foreground absolute -top-0.5 right-0 text-sm font-medium hover:opacity-75"
                   >
-                    Forgot password?
+                    Lupa Password?
                   </Link>
                 )}
               </FormItem>

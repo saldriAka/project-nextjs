@@ -5,3 +5,12 @@
 .grid-items {
   @apply rounded-md h-40 border-gray-400 border-2 bg-slate-100 flex justify-center items-center;
 }
+
+body {
+  pointer-events: auto !important;
+}
+
+[data-radix-popper-content-wrapper] > div {
+  border: none !important;
+  box-shadow: none !important;
+}

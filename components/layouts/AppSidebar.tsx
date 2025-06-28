@@ -38,9 +38,9 @@ export function AppSidebar({ menuItems, ...props }: AppSidebarProps) {
                   </div>
                   <div className='grid flex-1 text-left text-sm leading-tight'>
                     <span className='truncate font-semibold'> 
-                      Lorem
+                      SALDRI.id
                     </span>
-                    <span className='truncate text-xs'>Lorem</span>
+                    <span className='truncate text-xs'>admin</span>
                   </div>
                   <ChevronsUpDown className='ml-auto' />
                 </SidebarMenuButton>
@@ -62,7 +62,7 @@ export function AppSidebar({ menuItems, ...props }: AppSidebarProps) {
                     <div className='flex size-6 items-center justify-center rounded-sm border'>
                       
                     </div>
-                    Lorem
+                    Admin
                     <DropdownMenuShortcut>⌘ 1</DropdownMenuShortcut>
                   </DropdownMenuItem>
                 <DropdownMenuSeparator />

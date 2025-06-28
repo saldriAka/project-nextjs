@@ -1,11 +1,17 @@
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./**/*.{html,css}" 
+    "./**/*.{html,css}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        clash: ['"Clash Display"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
-};
+}

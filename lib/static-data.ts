@@ -41,13 +41,13 @@ export const items = [
     icon: Inbox,
   },
   {
-    title: "Test",
-    url: "/dashboard/test",
+    title: "Pages",
+    url: "/dashboard/pages",
     icon: Inbox,
   },
   {
-    title: "Calendar",
-    url: "/dashboard/calendar",
+    title: "Section",
+    url: "/dashboard/section",
     icon: Calendar,
   },
   {
