@@ -62,7 +62,7 @@ export default function About() {
             ].map((value, index) => (
               <Card
                 key={index}
-                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105 py-5"
               >
                 <CardHeader>
                   <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 w-fit transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white">
@@ -119,7 +119,7 @@ export default function About() {
 
       {/* Team Section */}
       <section className="py-16 px-4 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 ">
+        <div className="max-w-4xl mx-auto px-4 ">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
             Tim Kami
           </h2>
@@ -143,7 +143,7 @@ export default function About() {
             ].map((member, index) => (
               <Card
                 key={index}
-                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105 py-10"
               >
                 <CardHeader>
                   <div className="mx-auto mb-4 w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br p-1">

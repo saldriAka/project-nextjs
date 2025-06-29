@@ -2,7 +2,7 @@
 import Contact from '@/components/contact/Contact';
 
 export const metadata = {
-  title: "Kontak | SALDRI.id",
+  title: "Kontak | Temen Ngoding",
   description: "Hubungi tim kami untuk pertanyaan, dukungan, atau kolaborasi bisnis.",
 };
 

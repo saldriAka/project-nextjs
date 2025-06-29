@@ -25,6 +25,7 @@ const skills = [
   { name: "Docker", level: 85, category: "Devops", icon: Workflow  },
   { name: "CI/CD", level: 67, category: "Devops", icon: Workflow  },
   { name: "Linux Environment", level: 90, category: "Devops", icon: Workflow  },
+  { name: "Git/Gitflow", level: 90, category: "Devops", icon: Workflow  },
   { name: "Kubernetes", level: 68, category: "Devops", icon: Workflow  },
   { name: "Swagger", level: 68, category: "API", icon: Webhook  },
   { name: "RESTFul API", level: 68, category: "API", icon: Webhook  },

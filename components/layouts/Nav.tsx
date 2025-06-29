@@ -55,7 +55,7 @@ const Nav = ({
     url: "/",
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
-    title: "SALDRI.id",
+    title: "Temen Ngoding",
   },
   menu = [
     { title: "Home", url: "/" },
@@ -68,14 +68,14 @@ const Nav = ({
           title: "Component",
           description: "Our mission is to innovate and empower the world",
           icon: <Trees className="size-5 shrink-0" />,
-          url: "/about",
+          url: "/tentang-kami",
         },
         {
           title: "Block",
           description:
             "Get in touch with our support team or visit our community forums",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/contact",
+          url: "/kontak",
         },
       ],
     },
@@ -94,21 +94,21 @@ const Nav = ({
           title: "Starter Pack",
           description: "Our mission is to innovate and empower the world",
           icon: <Trees className="size-5 shrink-0" />,
-          url: "/about",
+          url: "/tentang-kami",
         },
         {
           title: "Ebook",
           description:
             "Get in touch with our support team or visit our community forums",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/contact",
+          url: "/kontak",
         },
       ],
     },
     
-    { title: "Tentang Kami", url: "/about" },
+    { title: "Tentang Kami", url: "/tentang-kami" },
     { title: "Blog", url: "/blog" },
-    { title: "Contact", url: "/contact" },
+    { title: "Kontak", url: "/kontak" },
   ],
   auth = {
     login: { title: "Login", url: "/login" },

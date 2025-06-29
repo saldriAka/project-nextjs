@@ -1,16 +1,16 @@
 {
-  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
   "/_not-found/page": "/_not-found",
+  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
   "/api/auth/register/route": "/api/auth/register",
   "/favicon.ico/route": "/favicon.ico",
-  "/(auth)/register/page": "/register",
-  "/(auth)/login/page": "/login",
-  "/dashboard/page": "/dashboard",
-  "/dashboard/pages/page": "/dashboard/pages",
-  "/dashboard/users/page": "/dashboard/users",
   "/(web)/page": "/",
-  "/(web)/contact/page": "/contact",
-  "/(web)/about/page": "/about",
   "/(web)/blog/[slug]/page": "/blog/[slug]",
-  "/(web)/blog/page": "/blog"
+  "/(web)/blog/page": "/blog",
+  "/(web)/tentang-kami/page": "/tentang-kami",
+  "/(web)/kontak/page": "/kontak",
+  "/(auth)/login/page": "/login",
+  "/(auth)/register/page": "/register",
+  "/dashboard/page": "/dashboard",
+  "/dashboard/users/page": "/dashboard/users",
+  "/dashboard/pages/page": "/dashboard/pages"
 }

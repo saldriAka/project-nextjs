@@ -2,7 +2,7 @@ import DetailBlog from "@/components/blog/DetailBlog";
 
 
 export const metadata = {
-  title: "Blog | SALDRI.id",
+  title: "Blog | Temen Ngoding",
   description: "Baca artikel terbaru kami seputar pemasaran, teknologi, dan pengembangan bisnis.",
 };
 

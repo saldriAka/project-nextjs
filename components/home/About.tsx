@@ -14,7 +14,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              <span className="text-slate-800 dark:text-white font-semibold italic">Temenngoding</span> adalah platform yang ditujukan untuk para developer yang ingin berkembang dengan pendekatan dunia kerja nyata.
+              <span className="text-slate-800 dark:text-white font-semibold italic">Temen Ngoding</span> adalah platform yang ditujukan untuk para developer yang ingin berkembang dengan pendekatan dunia kerja nyata.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Di sini, kamu bisa belajar melalui studi kasus nyata, mengakses berbagai <b className="italic">template, component, blocks</b>, serta mendapatkan <b className="italic">eBook</b> yang membantu mempercepat dan mempermudah proses kerja development.
