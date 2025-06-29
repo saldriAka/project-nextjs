@@ -61,7 +61,7 @@ const Nav = ({
     { title: "Home", url: "/" },
     {
       title: "Resource",
-      url: "#",
+      url: "/resource",
       arrow: true,
       items: [
         {
@@ -220,7 +220,7 @@ const renderMenuItem = (item: MenuItem) => {
     return (
       <NavigationMenuItem key={item.title}>
         <NavigationMenuTrigger className="-mr-3 capitalize font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
-          {item.title}
+          <Link href={item.url}>{item.title}</Link>
         </NavigationMenuTrigger>
         <NavigationMenuContent>
           <div className="grid w-[400px] gap-3 p-3 md:w-[500px] md:grid-cols-2 lg:w-[600px]">

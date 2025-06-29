@@ -14,17 +14,17 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Saya adalah seorang pengembang <b className="italic">FullStack</b> yang penuh semangat, dengan pengalaman lebih dari 5 tahun menciptakan solusi digital yang menggabungkan desain indah dengan fungsionalitas yang kuat.
+              <span className="text-slate-800 dark:text-white font-semibold italic">Temenngoding</span> adalah platform yang ditujukan untuk para developer yang ingin berkembang dengan pendekatan dunia kerja nyata.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Perjalanan saya dimulai dari rasa ingin tahu tentang bagaimana web bekerja, yang kemudian tumbuh menjadi kecintaan dalam merancang pengalaman pengguna yang intuitif dan berdampak.
+              Di sini, kamu bisa belajar melalui studi kasus nyata, mengakses berbagai <b className="italic">template, component, blocks</b>, serta mendapatkan <b className="italic">eBook</b> yang membantu mempercepat dan mempermudah proses kerja development.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Di luar dunia pemrograman, saya senang mengeksplorasi teknologi baru, berkontribusi pada proyek open-source, dan berbagi pengetahuan dengan komunitas developer.
+              Platform ini juga berfungsi sebagai referensi desain dan struktur web yang sesuai standar industri—membantu kamu membangun website yang tidak hanya bagus secara visual, tapi juga fungsional dan efisien.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
-              {["Pemecahan Masalah", "Kolaboratif", "Disiplin", "Kreatif"].map((trait) => (
+              {["Real-case Practice", "Komponen Siap Pakai", "eBook Bermanfaat", "Referensi Desain Modern"].map((trait) => (
                 <Badge key={trait} variant="secondary" className="px-3 py-1 text-sm">
                   {trait}
                 </Badge>

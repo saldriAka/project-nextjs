@@ -84,35 +84,36 @@ export default function About() {
       {/* Story Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent">
-                Cerita Kami
+                Awal Cerita
               </h2>
               <p className="text-muted-foreground mb-4">
-                Berdiri sejak 2020, kami memulai sebagai tim kecil dengan visi besar: menciptakan solusi digital yang bermakna.
+                <span className="font-semibold italic">Temen ngoding </span>lahir di tahun 2020 dari keresahan para developer yang ingin belajar dan berkembang dengan materi yang langsung relevan di dunia kerja.
               </p>
               <p className="text-muted-foreground mb-4">
-                Kini kami telah tumbuh menjadi mitra terpercaya berbagai bisnis, tanpa pernah melupakan misi utama kami: membantu klien kami tumbuh melalui teknologi.
+                Berawal dari komunitas kecil, kini Temen Ngoding telah membantu banyak developer dan tim produktif dengan menyediakan <b>template siap pakai</b>, <b>eBook teknikal</b>, dan <b>materi studi kasus nyata</b>.
               </p>
               <p className="text-muted-foreground">
-                Dengan semangat inovasi, kami terus berusaha menjadi bagian dari solusi di setiap tantangan digital yang Anda hadapi.
+                Dengan semangat kolaborasi dan inovasi, kami terus berkembang sebagai ruang belajar dan referensi terpercaya bagi para developer Indonesia.
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br rounded-lg p-1">
+              <div className="">
                 <div className="w-full h-full bg-background rounded-lg flex items-center justify-center">
                   <Image
                     src={Img}
                     width={500}
                     height={500}
-                    alt="Tim Kami"
+                    alt="Ilustrasi Tim Temenngoding"
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -125,18 +126,18 @@ export default function About() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "John Doe",
+                name: "Coming soon",
                 role: "CEO & Founder",
                 image: avatar1,
               },
               {
-                name: "Jane Smith",
+                name: "Coming soon",
                 role: "CTO",
                 image: avatar2,
               },
               {
-                name: "Mike Johnson",
-                role: "Lead Designer",
+                name: "Coming soon",
+                role: "Lead Developer",
                 image: avatar3,
               },
             ].map((member, index) => (
@@ -186,7 +187,7 @@ export default function About() {
               size="lg"
               className="transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transform hover:scale-105 bg-transparent"
             >
-              <Link href="/portfolio">Lihat Portofolio</Link>
+              <Link href="/resource">Lihat Portofolio</Link>
             </Button>
           </div>
         </div>

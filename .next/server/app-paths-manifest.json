@@ -1,16 +1,16 @@
 {
-  "/api/auth/register/route": "app/api/auth/register/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(auth)/login/page": "app/(auth)/login/page.js",
   "/(auth)/register/page": "app/(auth)/register/page.js",
-  "/(web)/page": "app/(web)/page.js",
-  "/(web)/blog/[slug]/page": "app/(web)/blog/[slug]/page.js",
-  "/(web)/about/page": "app/(web)/about/page.js",
-  "/(web)/blog/page": "app/(web)/blog/page.js",
-  "/(web)/contact/page": "app/(web)/contact/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/pages/page": "app/dashboard/pages/page.js",
   "/dashboard/users/page": "app/dashboard/users/page.js",
-  "/dashboard/pages/page": "app/dashboard/pages/page.js"
+  "/(web)/page": "app/(web)/page.js",
+  "/(web)/contact/page": "app/(web)/contact/page.js",
+  "/(web)/about/page": "app/(web)/about/page.js",
+  "/(web)/blog/[slug]/page": "app/(web)/blog/[slug]/page.js",
+  "/(web)/blog/page": "app/(web)/blog/page.js"
 }

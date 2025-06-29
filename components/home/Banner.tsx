@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Button } from '../ui/button'
 import {  Github, Linkedin, Mail } from 'lucide-react'
 import Img from '@/assets/img/avatar/avatar.png'
+import Link from 'next/link'
 
 export default function Banner() {
   return (
@@ -34,42 +35,42 @@ export default function Banner() {
           </p> */}
 
           <p className="text-lg text-slate-500 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed italic font-semibold">
-            Sesulit apa pun logika atau kode yang kamu kerjakan,
-                semua akan terasa lebih mudah jika dikerjakan bersama teman.
+            Sesulit apa pun kode yang sedang kamu kerjakan,
+                semua akan terasa lebih mudah jika di kerjakan bersama teman.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
-              onClick={() => {}}
+            <Link
+              href="/resource"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 text-white text-sm font-medium rounded-md bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
             >
-              Portfolio
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 hover:bg-slate-50 dark:hover:bg-slate-800 transform hover:scale-105 transition-all duration-300"
-              onClick={() => {}}
+              Resource
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-block border-2 px-6 py-2 rounded-lg text-base font-medium bg-white hover:bg-slate-50 dark:hover:bg-slate-800 transform hover:scale-105 transition-all duration-300"
             >
               Hubungi Saya
-            </Button>
+            </Link>
           </div>
 
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "#", label: "Email" },
+              { icon: Github, href: "https://github.com/saldriAka", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/saldri-andika-putra-45a75a109/", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:halo@temenngoding.com?subject=Halo%20Temen%20Ngoding&body=Saya%20ingin%20bertanya%20tentang%20...", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
-              <a
+              <Link
                 key={label}
                 href={href}
+                target="_blank"
                 className="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-slate-600 dark:text-slate-300 hover:text-blue-600"
                 aria-label={label}
               >
                 <Icon className="h-6 w-6" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

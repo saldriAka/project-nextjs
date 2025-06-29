@@ -17,55 +17,56 @@ import { PortfolioItem } from "@/types/home"
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Platform E-Commerce Modern",
     description:
-      "A modern e-commerce platform built with Next.js and Stripe integration. Features include product catalog, shopping cart, and secure payment processing.",
+      "Sebuah platform e-commerce modern yang dibangun dengan Next.js dan integrasi Stripe. Fitur mencakup katalog produk, keranjang belanja, dan pemrosesan pembayaran yang aman.",
     image: proj1,
     technologies: ["Next.js", "React", "Stripe", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    liveUrl: "https://contoh.com",
+    githubUrl: "https://github.com/contoh",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Aplikasi Manajemen Tugas",
     description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "Aplikasi manajemen tugas kolaboratif dengan pembaruan waktu nyata, fungsi drag-and-drop, dan fitur kerja tim.",
     image: proj2,
     technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    liveUrl: "https://contoh.com",
+    githubUrl: "https://github.com/contoh",
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Dasbor Cuaca Interaktif",
     description:
-      "A responsive weather dashboard that displays current weather conditions, forecasts, and interactive maps using weather APIs.",
+      "Dasbor cuaca responsif yang menampilkan kondisi cuaca saat ini, prakiraan, dan peta interaktif menggunakan API cuaca.",
     image: proj3,
     technologies: ["Vue.js", "Weather API", "Chart.js", "CSS3"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    liveUrl: "https://contoh.com",
+    githubUrl: "https://github.com/contoh",
   },
   {
     id: 4,
-    title: "Social Media App",
+    title: "Aplikasi Sosial Media",
     description:
-      "A full-stack social media application with user authentication, post creation, real-time messaging, and social interactions.",
+      "Aplikasi sosial media full-stack dengan autentikasi pengguna, pembuatan postingan, pesan instan, dan interaksi sosial.",
     image: proj4,
     technologies: ["React Native", "Firebase", "Redux", "Expo"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    liveUrl: "https://contoh.com",
+    githubUrl: "https://github.com/contoh",
   },
   {
     id: 5,
-    title: "Portfolio Website",
+    title: "Website Portofolio Pribadi",
     description:
-      "A responsive portfolio website showcasing projects, skills, and experience with smooth animations and modern design.",
+      "Website portofolio responsif yang menampilkan proyek, keahlian, dan pengalaman dengan animasi halus dan desain modern.",
     image: proj5,
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
+    liveUrl: "https://contoh.com",
+    githubUrl: "https://github.com/contoh",
   },
 ]
+
 
 export function ShowCases({ ref }: { ref?: React.Ref<HTMLDivElement> }) {
   const [selectedItem, setSelectedItem] = useState<(typeof portfolioItems)[0] | null>(null)

@@ -27,6 +27,7 @@ const skills = [
   { name: "Linux Environment", level: 90, category: "Devops", icon: Workflow  },
   { name: "Kubernetes", level: 68, category: "Devops", icon: Workflow  },
   { name: "Swagger", level: 68, category: "API", icon: Webhook  },
+  { name: "RESTFul API", level: 68, category: "API", icon: Webhook  },
   { name: "Postman", level: 68, category: "API", icon: Webhook  },
 ]
 

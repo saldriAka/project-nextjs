@@ -5,173 +5,174 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import avatar1 from '@/assets/img/avatar/avatar-1.jpg'
+import avatar2 from '@/assets/img/avatar/avatar-2.jpg'
+import avatar3 from '@/assets/img/avatar/avatar-3.jpg'
+import avatar4 from '@/assets/img/avatar/avatar-4.jpg'
+import avatar5 from '@/assets/img/avatar/avatar-5.jpg'
+import avatar6 from '@/assets/img/avatar/avatar-6.jpg'
+
 import {
   ChevronLeft,
   ChevronRight,
   Star,
   Heart,
   MessageCircle,
-  Share2,
   Quote,
-  ChevronUp,
-  ChevronDown,
   Pause,
   Play,
 } from "lucide-react"
+import { StaticImageData } from "next/image"
 
-const reviewsData = [
+type Review = {
+  id: number
+  name: string
+  avatar: StaticImageData
+  rating: number
+  date: string
+  review: string
+  likes: number
+  verified: boolean
+  product: string
+}
+
+const reviewsData: Review[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Santi Putri",
+    avatar: avatar1,
     rating: 5,
     date: "2 hari lalu",
     review:
       "Produk luar biasa! Kualitas premium dengan harga yang sangat reasonable. Packaging sangat rapi",
     likes: 24,
     verified: true,
-    product: "Smartphone Pro Max",
+    product: "Web Development",
   },
   {
     id: 2,
     name: "Ahmad Rizki",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: avatar2,
     rating: 4,
     date: "5 hari lalu",
-    review:
-      "Overall bagus, tapi ada beberapa fitur yang masih bisa diperbaiki.",
+    review: "Overall bagus, tapi ada beberapa fitur yang masih bisa diperbaiki.",
     likes: 15,
     verified: true,
-    product: "Laptop Gaming X1",
+    product: "RESTFul API",
   },
   {
     id: 3,
-    name: "Maria Santos",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Maria Putri",
+    avatar: avatar3,
     rating: 5,
     date: "1 minggu lalu",
     review: "Sangat puas dengan pembelian ini. Sudah pakai 2 minggu dan performanya konsisten.",
     likes: 32,
     verified: true,
-    product: "Wireless Headphones",
+    product: "SEO Optimization",
   },
   {
     id: 4,
     name: "Budi Santoso",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: avatar4,
     rating: 3,
     date: "2 minggu lalu",
     review: "Produk standar, tidak ada yang istimewa tapi juga tidak mengecewakan.",
     likes: 8,
     verified: false,
-    product: "Smart Watch",
+    product: "Mobile App",
   },
   {
     id: 5,
-    name: "Lisa Chen",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Lisa Rahmah",
+    avatar: avatar4,
     rating: 5,
     date: "3 minggu lalu",
-    review:
-      "Exceptional quality! Melebihi ekspektasi saya. Build quality solid, fitur lengkap, dan design yang elegant.",
+    review: "Exceptional quality! Melebihi ekspektasi saya. Build quality solid, fitur lengkap, dan design yang elegant.",
     likes: 45,
     verified: true,
-    product: "Tablet Pro",
+    product: "Revamping Website",
   },
   {
     id: 6,
-    name: "David Kim",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "David Putra",
+    avatar: avatar5,
     rating: 4,
     date: "1 bulan lalu",
     review: "Good value for money. Ada minor issues tapi overall satisfied dengan purchase ini. Support team helpful.",
     likes: 19,
     verified: true,
-    product: "Bluetooth Speaker",
+    product: "Frontend Development",
   },
   {
     id: 7,
     name: "Siti Nurhaliza",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: avatar6,
     rating: 5,
     date: "1 bulan lalu",
-    review:
-      "Pelayanan excellent, produk berkualitas tinggi. Sudah order beberapa kali dan selalu puas dengan hasilnya.",
+    review: "Pelayanan excellent, produk berkualitas tinggi. Sudah order beberapa kali dan selalu puas dengan hasilnya.",
     likes: 28,
     verified: true,
-    product: "Gaming Mouse",
+    product: "Website Optimization",
   },
   {
     id: 8,
     name: "Rudi Hermawan",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: avatar2,
     rating: 4,
     date: "2 bulan lalu",
     review: "Kualitas bagus, harga kompetitif. Pengiriman agak lama tapi packaging aman. Akan order lagi next time.",
     likes: 12,
     verified: false,
-    product: "Mechanical Keyboard",
+    product: "AI Development",
   },
 ]
 
 export default function Component() {
   const [isAutoScrolling, setIsAutoScrolling] = useState(true)
-  const [scrollDirection, setScrollDirection] = useState<"horizontal" | "vertical">("horizontal")
   const horizontalScrollRef = useRef<HTMLDivElement>(null)
-  const verticalScrollRef = useRef<HTMLDivElement>(null)
 
-  // Auto scroll untuk horizontal
   useEffect(() => {
-    if (!isAutoScrolling || scrollDirection !== "horizontal") return
+    if (!isAutoScrolling) return
 
-    const interval = setInterval(() => {
-      if (horizontalScrollRef.current) {
-        const container = horizontalScrollRef.current
-        const maxScroll = container.scrollWidth - container.clientWidth
+    let animationFrame: number
 
-        if (container.scrollLeft >= maxScroll) {
-          container.scrollLeft = 0
-        } else {
-          container.scrollLeft += 1
-        }
+    const scrollStep = () => {
+      const container = horizontalScrollRef.current
+      if (!container) return
+
+      const maxScroll = container.scrollWidth - container.clientWidth
+      if (container.scrollLeft >= maxScroll) {
+        container.scrollLeft = 0
+      } else {
+        container.scrollLeft += 1
       }
-    }, 30)
 
-    return () => clearInterval(interval)
-  }, [isAutoScrolling, scrollDirection])
+      animationFrame = requestAnimationFrame(scrollStep)
+    }
+
+    animationFrame = requestAnimationFrame(scrollStep)
+    return () => cancelAnimationFrame(animationFrame)
+  }, [isAutoScrolling])
 
   const scrollHorizontal = (direction: "left" | "right") => {
     if (horizontalScrollRef.current) {
       const scrollAmount = 320
+      const container = horizontalScrollRef.current
       const newScrollLeft =
         direction === "left"
-          ? horizontalScrollRef.current.scrollLeft - scrollAmount
-          : horizontalScrollRef.current.scrollLeft + scrollAmount
+          ? container.scrollLeft - scrollAmount
+          : container.scrollLeft + scrollAmount
 
-      horizontalScrollRef.current.scrollTo({
+      container.scrollTo({
         left: newScrollLeft,
         behavior: "smooth",
       })
     }
   }
 
-  const scrollVertical = (direction: "up" | "down") => {
-    if (verticalScrollRef.current) {
-      const scrollAmount = 200
-      const newScrollTop =
-        direction === "up"
-          ? verticalScrollRef.current.scrollTop - scrollAmount
-          : verticalScrollRef.current.scrollTop + scrollAmount
-
-      verticalScrollRef.current.scrollTo({
-        top: newScrollTop,
-        behavior: "smooth",
-      })
-    }
-  }
-
   return (
-    <div className="min-h-screen p-4 sm:p-6 ">
+    <div className="min-h-screen p-4 sm:p-6">
       <div className="max-w-7xl mx-auto space-y-12 pt-15">
         <section className="space-y-6 py-12 sm:py-16">
           <div className="text-center mb-8 sm:mb-12">
@@ -193,7 +194,6 @@ export default function Component() {
           </div>
 
           <div className="relative">
-            {/* Navigation Buttons (hidden on mobile) */}
             <Button
               variant="outline"
               size="icon"
@@ -211,7 +211,6 @@ export default function Component() {
               <ChevronRight className="h-4 w-4" />
             </Button>
 
-            {/* Scrollable Area */}
             <div
               ref={horizontalScrollRef}
               className="overflow-x-auto px-4 sm:px-12 scrollbar-hide"
@@ -228,8 +227,11 @@ export default function Component() {
                       <CardContent className="p-4 sm:p-6 space-y-4">
                         <div className="flex items-center space-x-3 mb-2">
                           <Avatar className="h-10 w-10 sm:h-12 sm:w-12">
-                            <AvatarImage src={review.avatar || "/placeholder.svg"} />
-                            <AvatarFallback className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                            <AvatarImage
+                              src={typeof review.avatar === "string" ? review.avatar : review.avatar.src}
+                              alt={`${review.name} avatar`}
+                            />
+                            <AvatarFallback>
                               {review.name.split(" ").map((n) => n[0]).join("")}
                             </AvatarFallback>
                           </Avatar>
@@ -239,7 +241,6 @@ export default function Component() {
                           </div>
                         </div>
 
-                        {/* Star Rating */}
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -254,7 +255,6 @@ export default function Component() {
                           <p className="text-xs sm:text-sm text-gray-500">{review.date}</p>
                         </div>
 
-                        {/* Review Text */}
                         <div className="relative">
                           <Quote className="absolute -top-2 -left-2 h-5 w-5 text-gray-300" />
                           <p className="text-gray-700 pl-6 italic text-xs sm:text-sm leading-relaxed">
@@ -262,7 +262,6 @@ export default function Component() {
                           </p>
                         </div>
 
-                        {/* Footer */}
                         <div className="flex items-center justify-between mt-2">
                           <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-500">
                             <span className="flex items-center space-x-1">
@@ -275,7 +274,9 @@ export default function Component() {
                             </span>
                           </div>
                           {review.verified && (
-                            <Badge className="bg-green-100 text-green-800 text-[10px] sm:text-xs">Verified</Badge>
+                            <Badge className="bg-green-500 text-white px-2 py-0.5 text-[10px] sm:text-xs rounded-full">
+                              Verified
+                            </Badge>
                           )}
                         </div>
                       </CardContent>
