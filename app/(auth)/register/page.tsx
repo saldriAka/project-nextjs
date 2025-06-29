@@ -2,6 +2,7 @@
 import ViteLogo from '@/assets/vite.svg'
 import { UserAuthForm } from '@/components/UserAuthForm'
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Register | SALDRI.id",
@@ -29,7 +30,7 @@ export default function RegisterPage() {
           SALDRI.id
         </div>
 
-        <img
+        <Image
           src={ViteLogo.src}
           className='relative m-auto'
           width={301}

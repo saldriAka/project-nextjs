@@ -60,16 +60,10 @@ const Nav = ({
   menu = [
     { title: "Home", url: "/" },
     {
-      title: "Bantu Teman",
+      title: "Resource",
       url: "#",
       arrow: true,
       items: [
-        {
-          title: "Template",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "/blog",
-        },
         {
           title: "Component",
           description: "Our mission is to innovate and empower the world",
@@ -83,6 +77,25 @@ const Nav = ({
           icon: <Zap className="size-5 shrink-0" />,
           url: "/contact",
         },
+      ],
+    },
+    {
+      title: "Produk",
+      url: "#",
+      arrow: true,
+      items: [
+        {
+          title: "Template",
+          description: "The latest industry news, updates, and info",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/blog",
+        },
+        {
+          title: "Starter Pack",
+          description: "Our mission is to innovate and empower the world",
+          icon: <Trees className="size-5 shrink-0" />,
+          url: "/about",
+        },
         {
           title: "Ebook",
           description:
@@ -93,7 +106,7 @@ const Nav = ({
       ],
     },
     
-    { title: "About", url: "/about" },
+    { title: "Tentang Kami", url: "/about" },
     { title: "Blog", url: "/blog" },
     { title: "Contact", url: "/contact" },
   ],
@@ -115,8 +128,10 @@ const Nav = ({
           {/* Logo */}
           <Link href={logo.url} className="flex items-center">
             
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Tmngoding
+            <div className="flex flex-col items-center space-y-2 px-3">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 flex items-center justify-center text-white font-bold text-lg shadow-lg animate-bounce">
+                TN
+              </div>
             </div>
           </Link>
 
@@ -204,7 +219,7 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items && item.items.length > 0) {
     return (
       <NavigationMenuItem key={item.title}>
-        <NavigationMenuTrigger className="capitalize font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
+        <NavigationMenuTrigger className="-mr-3 capitalize font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent>

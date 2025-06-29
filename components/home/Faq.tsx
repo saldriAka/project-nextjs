@@ -29,6 +29,13 @@ const firstColumnData: AccordionItem[] = [
     content:
       "Kami bantu desain dan implementasi design system yang konsisten di seluruh platform, baik web maupun mobile, agar pengalaman pengguna tetap mulus.",
   },
+
+  {
+    id: "no-design-system",
+    title: "Tidak punya design system yang jelas?",
+    content:
+      "Kami bantu buatkan dan terapkan design system yang scalable agar tim dev dan design bisa bekerja lebih efisien tanpa tumpang tindih.",
+  },
 ]
 
 
@@ -51,6 +58,13 @@ const secondColumnData: AccordionItem[] = [
     content:
       "Kami bantu setup CI/CD pipeline yang rapi agar proses build, test, dan deploy berjalan otomatis dan minim kesalahan.",
   },
+
+  {
+    id: "automated-deploy",
+    title: "Ingin proses deploy otomatis dan minim risiko?",
+    content:
+      "Dengan integrasi CI/CD yang tepat, kami pastikan setiap perubahan bisa langsung diuji dan dideploy tanpa repot manual.",
+  },
 ]
 
 
@@ -67,8 +81,8 @@ export function Faq() {
   }
 
   const renderAccordion = (data: AccordionItem[], openId: string | null, column: "first" | "second") => {
-    return data.map((item) => (
-      <div key={item.id} className="border rounded-lg overflow-hidden">
+    return data.map((item, index) => ( 
+      <div key={`${column}-${item.id}-${index}`} className="border rounded-lg overflow-hidden">
         <button
           onClick={() => handleToggle(item.id, column)}
           className="w-full px-4 py-3 text-left hover:bg-muted/50 transition-colors duration-200 flex items-center justify-between"
@@ -85,7 +99,8 @@ export function Faq() {
         </button>
 
         <div
-          id={`content-${item.id}`}
+          aria-controls={`content-${column}-${item.id}`}
+          id={`content-${column}-${item.id}`}
           className={cn(
             "overflow-hidden transition-all duration-300 ease-in-out",
             openId === item.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -100,8 +115,8 @@ export function Faq() {
   }
 
   return (
-    <section id="faq" className="py-20 bg-white dark:bg-slate-800">
-      <div className="max-w-7xl mx-auto py-15">
+    <section id="faq" className="py-10 bg-white dark:bg-slate-800">
+      <div className="max-w-5xl mx-auto py-15">
         <div className="flex flex-col justify-center">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Faq</h2>

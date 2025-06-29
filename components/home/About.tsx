@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
-import Img from '@/assets/placeholder.svg'
+import Img from '@/assets/about.jpg'
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-800">
+    <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Sekilas Tentang</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
         </div>
 

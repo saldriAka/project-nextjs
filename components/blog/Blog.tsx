@@ -84,6 +84,7 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
             Blog | Artikel
           </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-5"></div>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Wawasan, tutorial, dan pemikiran seputar teknologi, desain, dan pengembangan dari tim ahli kami.
           </p>

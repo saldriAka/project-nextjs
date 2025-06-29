@@ -116,6 +116,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
             Sampaikan pertanyaan Anda
           </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-5"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Kami senang mendengar dari Anda. Silakan isi formulir ini atau hubungi kami melalui kontak di bawah.
           </p>

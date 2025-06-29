@@ -2,6 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Users, Target, Award, Heart } from "lucide-react"
+import Img from '@/assets/about.jpg'
+import Image from "next/image"
+import avatar1 from '@/assets/img/avatar/avatar-1.jpg'
+import avatar2 from '@/assets/img/avatar/avatar-2.jpg'
+import avatar3 from '@/assets/img/avatar/avatar-3.jpg'
 
 export default function About() {
   return (
@@ -12,6 +17,7 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transform hover:scale-105">
             Tentang Kami
           </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-5"></div>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Kami hadir untuk memberikan solusi nyata atas tantangan digital Anda. Dari ide kecil hingga sistem kompleks, kami bantu wujudkan dengan teknologi terbaik.
           </p>
@@ -94,10 +100,12 @@ export default function About() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg p-1">
+              <div className="aspect-square bg-gradient-to-br rounded-lg p-1">
                 <div className="w-full h-full bg-background rounded-lg flex items-center justify-center">
-                  <img
-                    src="/placeholder.svg?height=400&width=400"
+                  <Image
+                    src={Img}
+                    width={500}
+                    height={500}
                     alt="Tim Kami"
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -119,17 +127,17 @@ export default function About() {
               {
                 name: "John Doe",
                 role: "CEO & Founder",
-                image: "/placeholder.svg?height=300&width=300",
+                image: avatar1,
               },
               {
                 name: "Jane Smith",
                 role: "CTO",
-                image: "/placeholder.svg?height=300&width=300",
+                image: avatar2,
               },
               {
                 name: "Mike Johnson",
                 role: "Lead Designer",
-                image: "/placeholder.svg?height=300&width=300",
+                image: avatar3,
               },
             ].map((member, index) => (
               <Card
@@ -137,8 +145,8 @@ export default function About() {
                 className="text-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
               >
                 <CardHeader>
-                  <div className="mx-auto mb-4 w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 p-1">
-                    <img
+                  <div className="mx-auto mb-4 w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br p-1">
+                    <Image
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover rounded-full bg-background"

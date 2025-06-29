@@ -2,22 +2,22 @@
 
 import Image from 'next/image'
 import { Button } from '../ui/button'
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react'
-import Img from '@/assets/placeholder.svg'
+import {  Github, Linkedin, Mail } from 'lucide-react'
+import Img from '@/assets/img/avatar/avatar.png'
 
 export default function Banner() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
-          <div className=" relative">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+          <div className="relative">
+            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 bg-gradient-to-br from-blue-500 to-purple-500 p-1 shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <Image
                 src={Img}
                 alt="Profile"
                 width={128}
                 height={128}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain rounded-full bg-background"
               />
             </div>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
@@ -44,7 +44,7 @@ export default function Banner() {
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
               onClick={() => {}}
             >
-              View My Work
+              Portfolio
             </Button>
             <Button
               variant="outline"
@@ -52,7 +52,7 @@ export default function Banner() {
               className="border-2 hover:bg-slate-50 dark:hover:bg-slate-800 transform hover:scale-105 transition-all duration-300"
               onClick={() => {}}
             >
-              Get In Touch
+              Hubungi Saya
             </Button>
           </div>
 

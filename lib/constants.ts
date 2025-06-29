@@ -1,22 +1,9 @@
-import { Language, Step } from "@/types/pages";
+
 import { Check, FileText, Layers, Settings } from "lucide-react";
 
 export const APP_NAME = 'My App';
 
-export const availableLanguages: Language[] = [
-  { code: "ID", name: "Indonesian", flag: "🇮🇩" },
-  { code: "EN", name: "English", flag: "🇺🇸" },
-]
-
 export const sectionTypes: string[] = ["CONTENT", "HERO", "FORM", "GALLERY", "CTA"]
-
-// Updated steps array - merged step 1 and 2
-export const steps: Step[] = [
-  { id: 1, title: "Page", desc: "Page info, translations & SEO", icon: FileText },
-  { id: 2, title: "Sections", desc: "Add page sections", icon: Settings },
-  { id: 3, title: "Section Input", desc: "Configure form inputs", icon: Layers },
-  { id: 4, title: "Review", desc: "Review and create", icon: Check },
-]
 
 export const robotOptions = [
   { label: "Index, Follow", value: "index, follow" },
